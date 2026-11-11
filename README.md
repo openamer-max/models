@@ -1,10 +1,55 @@
-# OpenAmer-Max
+# OpenAmer-Max — Modelle
 
-Ein **eigenes 3B-Sprachmodell** für OpenAmer — läuft lokal in [Ollama](https://ollama.com),
-ohne Cloud, ohne API-Key, ohne Anbieter.
+Zwei Stufen der OpenAmer-Max-Familie, nach Parameterzahl benannt:
 
-Entstanden aus **Qwen2.5-3B-Instruct** (Apache 2.0) durch QLoRA-Feintuning,
-verschmolzen mit der Basis (`merge_and_unload`) und nach GGUF gewandelt.
+| Stufe | Parameter | Ziel | Download |
+|---|---|---|---|
+| **Watch** | ≤ 1B (0.6B) | Smartwatch, Handy, CPU | **[Release watch-v1](https://github.com/openamer-max/models/releases/tag/watch-v1)** · 639 MB (Q8_0) |
+| **Tab** | 5–10B (7.6B) | Tablet, Laptop | [Release v1.3.0](https://github.com/openamer-max/models/releases/tag/v1.3.0) |
+
+`Phone` (1–5B), `Desktop` (10–20B), `Pro` (20–30B), `Ultra` (30–100B),
+`Mega`, `Giga`, `Tera` folgen stufenweise.
+
+## OpenAmer-Max-Watch (0.6B, Q8_0, 639 MB)
+
+Kleinstes Modell der Familie: läuft offline auf einem Gerät, antwortet in
+**0,04–0,38 s**, braucht keine GPU.
+
+Gemessen an der ausgelieferten Datei:
+
+| Prüfung | Ergebnis |
+|---|---|
+| Eingefrorener Prüfstand, 23 ungesehene Fälle, kontaminationsfrei | **23/23 (100 %)** |
+| Antwort-Token-Genauigkeit (Validierung) | **99,63 %** |
+| Frischtest, 9 nie trainierte Fragen | **8/9** |
+| 16 Sonden durch Ollama | **15/16** |
+
+**Wichtig:** `think: false` ist Pflicht — ohne das verbraucht Qwen3 alle Tokens im
+Denkblock und antwortet nie.
+
+**Grenzen, ehrlich:** kein freier deutscher Fließtext, kein Allgemeinwissen, keine
+vierstelligen Multiplikationen; Bosnisch nur bei direkten Formulierungen.
+
+```bash
+curl -L -o openamer-max-watch.gguf   https://github.com/openamer-max/models/releases/download/watch-v1/openamer-max-watch-q8.gguf
+ollama create OpenAmer-Max-Watch -f Modelfile
+```
+
+Auch verfügbar auf
+[HuggingFace](https://huggingface.co/openamer-max/openamer-max-watch) und
+[Kaggle](https://www.kaggle.com/datasets/amersacirovic/openamer-max-watch).
+
+---
+
+## Unterstützen
+
+Wenn dir diese Modelle helfen: ein ⭐ hier hilft mehr als du denkst — daran erkennen
+Sponsoren, dass ein Projekt Aufmerksamkeit hat.
+
+**PayPal (QR-Code im Release, `paypal-qr.png`):**
+<https://www.paypal.com/qrcodes/managed/bfb5b6b5-c04c-4836-af60-987dff8cff61>
+
+---
 
 ## Version 1.1 — was sich geändert hat
 
