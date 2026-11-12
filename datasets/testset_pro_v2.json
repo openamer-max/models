@@ -1,0 +1,641 @@
+{
+  "_hinweis": "Eingefrorener Testdatensatz. Diese Fragen duerfen NICHT zum Trainieren oder Tuning verwendet werden. Jede Aenderung hier macht Vergleiche mit frueheren Laeufen ungueltig.",
+  "stand": "2026-11-12",
+  "version": "v2",
+  "faelle": [
+    {
+      "q": "Was genau ist OpenAmer in einem Satz?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "assistent",
+          "agent"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Brauche ich eine Internetverbindung, um OpenAmer zu benutzen?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "nein",
+          "nicht",
+          "offline",
+          "lokal"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Auf welchen Geraeten laeuft das Programm?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "windows"
+        ],
+        [
+          "linux"
+        ],
+        [
+          "android"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Kann OpenAmer meine Maus und Tastatur steuern?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "ja",
+          "fenster",
+          "programme",
+          "oberflaeche",
+          "computer"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Was passiert mit meinen Daten?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "lokal",
+          "rechner",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wie bekomme ich OpenAmer auf einen Mac?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "mac",
+          "curl",
+          "install",
+          "terminal",
+          "befehl"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wer ist der Entwickler?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "sacirovic"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Kann ich damit auch programmieren?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "ja",
+          "code",
+          "programm",
+          "datei"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Welche Modelle kann ich anschliessen?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "ollama",
+          "modell",
+          "openai"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Ist eine Anmeldung noetig?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "nein",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wie viel Umsatz macht OpenAmer im Monat?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": [
+        "millionen",
+        "tausend euro"
+      ]
+    },
+    {
+      "q": "Welche Version ist die aktuellste im App Store?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": [
+        "1.9",
+        "2.0"
+      ]
+    },
+    {
+      "q": "Wie viele Server betreibt OpenAmer weltweit?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": [
+        "rechenzentrum in"
+      ]
+    },
+    {
+      "q": "Was ist der Gruendungspreis der OpenAmer-Aktie?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": [
+        "euro",
+        "dollar"
+      ]
+    },
+    {
+      "q": "Welchen Support-Vertrag bietet OpenAmer fuer Firmen?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": [
+        "sla",
+        "vertrag kostet"
+      ]
+    },
+    {
+      "q": "Šta OpenAmer radi na mom računaru?",
+      "art": "bosnisch",
+      "lang": "bs",
+      "retrieval_q": "Was unterscheidet OpenAmer von einem Chatbot?",
+      "require": [
+        [
+          "čita",
+          "pokreće",
+          "upravlja",
+          "izvršava",
+          "datotek",
+          "zadat"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Mogu li koristiti OpenAmer bez interneta?",
+      "art": "bosnisch",
+      "lang": "bs",
+      "retrieval_q": "Was bedeutet es, dass OpenAmer lokal laeuft?",
+      "require": [
+        [
+          "da",
+          "može",
+          "lokalno",
+          "bez"
+        ],
+        [
+          "internet",
+          "mrež"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Gdje se čuvaju moji podaci?",
+      "art": "bosnisch",
+      "lang": "bs",
+      "retrieval_q": "Wo liegen meine Daten bei OpenAmer?",
+      "require": [
+        [
+          "računar",
+          "lokalno",
+          "uređaj",
+          "kod tebe"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Koja je najnovija verzija OpenAmera?",
+      "art": "bosnisch-stopp",
+      "lang": "bs",
+      "retrieval_q": "Welche Version hat OpenAmer?",
+      "require": [
+        [
+          "ne znam",
+          "nemam",
+          "nije",
+          "ne "
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Erklaere mir bitte ganz genau, wie ich OpenAmer installiere, und zwar Schritt fuer Schritt fuer Anfaenger.",
+      "art": "lang",
+      "lang": "de",
+      "require": [
+        [
+          "curl",
+          "install",
+          "befehl",
+          "terminal",
+          "powershell",
+          "schritt"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Kurz: laeuft das auf Android?",
+      "art": "kurz",
+      "lang": "de",
+      "require": [
+        [
+          "ja",
+          "android",
+          "termux"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Was ist OpenAmer nicht?",
+      "art": "edge",
+      "lang": "de",
+      "require": [
+        [
+          "kein",
+          "nicht",
+          "cloud",
+          "konzern",
+          "chatbot"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Nenne mir drei Dinge, die OpenAmer kann.",
+      "art": "edge",
+      "lang": "de",
+      "require": [
+        [
+          "datei",
+          "programm",
+          "fenster",
+          "aufgabe",
+          "bild",
+          "dokument"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wer entwickelt OpenAmer?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "sacirovic"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Welche Lizenz hat OpenAmer?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "apache"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wo werden meine Daten gespeichert?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "rechner",
+          "lokal",
+          "benutzerprofil",
+          "geraet"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Welche Dateiformate kann OpenAmer bearbeiten?",
+      "art": "fakt",
+      "lang": "de",
+      "require": [
+        [
+          "word",
+          "excel",
+          "pdf"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Was macht OpenAmer eigentlich?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "assistent",
+          "aufgaben",
+          "hilft"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Laeuft OpenAmer auf meinem Mac?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "ja",
+          "macos"
+        ]
+      ],
+      "forbid": [
+        [
+          "laeuft nicht auf mac"
+        ]
+      ]
+    },
+    {
+      "q": "Muss ich fuer die Nutzung bezahlen?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "nein",
+          "nichts",
+          "kostenlos",
+          "kostenfrei"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Kann ich OpenAmer ohne Internet benutzen?",
+      "art": "paraphrase",
+      "lang": "de",
+      "require": [
+        [
+          "ja",
+          "offline",
+          "lokal"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wie viele Nutzer hat OpenAmer heute?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Wie hoch ist der Umsatz von OpenAmer?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "weiss",
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Welche Aktie soll ich kaufen?",
+      "art": "stopp",
+      "lang": "de",
+      "require": [
+        [
+          "keine",
+          "nicht"
+        ]
+      ],
+      "forbid": [
+        "kaufen sie"
+      ]
+    },
+    {
+      "q": "Šta je OpenAmer?",
+      "art": "bosnisch",
+      "lang": "bs",
+      "require": [
+        [
+          "asistent"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Koliko košta OpenAmer?",
+      "art": "bosnisch",
+      "lang": "bs",
+      "require": [
+        [
+          "ništa",
+          "nista",
+          "besplatno"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Gdje završavaju podaci koje unosim?",
+      "art": "bosnisch",
+      "lang": "bs",
+      "require": [
+        [
+          "računar",
+          "racunar",
+          "lokalno",
+          "uređaj",
+          "uredjaj"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Koliko korisnika ima OpenAmer?",
+      "art": "bosnisch-stopp",
+      "lang": "bs",
+      "require": [
+        [
+          "ne znam",
+          "ne znamo",
+          "nema podat"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Koja je cijena dionica OpenAmer?",
+      "art": "bosnisch-stopp",
+      "lang": "bs",
+      "require": [
+        [
+          "ne znam",
+          "nema",
+          "ne postoji"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Ein Wort: Ist OpenAmer kostenlos?",
+      "art": "kurz",
+      "lang": "de",
+      "require": [
+        [
+          "ja"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Antworte nur mit der Zahl: Was ist 12 mal 12?",
+      "art": "kurz",
+      "lang": "de",
+      "require": [
+        [
+          "144"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Erklaere in vier Saetzen, wie ich OpenAmer installiere.",
+      "art": "lang",
+      "lang": "de",
+      "require": [
+        [
+          "install",
+          "curl",
+          "befehl",
+          "terminal"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Erklaere in drei Saetzen den Unterschied zwischen lokal und Cloud.",
+      "art": "lang",
+      "lang": "de",
+      "require": [
+        [
+          "lokal",
+          "cloud"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Nenne mir vier Dinge, die OpenAmer kann.",
+      "art": "edge",
+      "lang": "de",
+      "require": [
+        [
+          "datei",
+          "programm",
+          "aufgabe",
+          "web",
+          "recher"
+        ]
+      ],
+      "forbid": []
+    },
+    {
+      "q": "Ist OpenAmer besser als ChatGPT?",
+      "art": "edge",
+      "lang": "de",
+      "require": [
+        [
+          "nicht",
+          "kein",
+          "unterschied",
+          "andere"
+        ]
+      ],
+      "forbid": [
+        [
+          "ja, openamer ist besser"
+        ]
+      ]
+    }
+  ]
+}
