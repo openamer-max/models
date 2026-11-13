@@ -1,14 +1,47 @@
 # OpenAmer-Max — Modelle
 
-Zwei Stufen der OpenAmer-Max-Familie, nach Parameterzahl benannt:
+Fünf Stufen der OpenAmer-Max-Familie, **nach Parameterzahl benannt**, nicht nach
+Marketing. Jede Stufe ist trainiert, gegen denselben eingefrorenen Prüfstand
+gemessen (45 Fälle) und über vier Kanäle verfügbar.
 
-| Stufe | Parameter | Ziel | Download |
-|---|---|---|---|
-| **Watch** | ≤ 1B (0.6B) | Smartwatch, Handy, CPU | **[Release watch-v1](https://github.com/openamer-max/models/releases/tag/watch-v1)** · 639 MB (Q8_0) |
-| **Tab** | 5–10B (7.6B) | Tablet, Laptop | [Release v1.3.0](https://github.com/openamer-max/models/releases/tag/v1.3.0) |
+| Stufe | Parameter | Größe | Prüfstand v2 | Bezug |
+|---|---|---|---|---|
+| **Watch** | ≤ 1B (0,60B) | 639 MB Q8_0 | **37/45 (82,2 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-watch) · [Release watch-v1](https://github.com/openamer-max/models/releases/tag/watch-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-watch) |
+| **Phone** | 1–5B (3,09B) | 2,5 GB Q6_K | **43/45 (95,6 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-phone) · [Release phone-v1](https://github.com/openamer-max/models/releases/tag/phone-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-phone) |
+| **Tab** | 5–10B (7,62B) | 4,4 GB Q4_K_M | **42/45 (93,3 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-tab) · [Release tab-v1](https://github.com/openamer-max/models/releases/tag/tab-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-tab) |
+| **Desktop** | 10–20B (14,70B) | 8,4 GB Q4_K_M | **44/45 (97,8 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-desktop) · [Release desktop-v1](https://github.com/openamer-max/models/releases/tag/desktop-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-desktop) |
+| **Pro** | 20–30B (24,00B) | 13,4 GB Q4_K_M | **43/45 (95,6 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-pro) · [Release pro-v1](https://github.com/openamer-max/models/releases/tag/pro-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-pro) |
 
-`Phone` (1–5B), `Desktop` (10–20B), `Pro` (20–30B), `Ultra` (30–100B),
-`Mega`, `Giga`, `Tera` folgen stufenweise.
+**Ehrlich dazu:** Desktop (14,7B) liegt mit 44/45 vor Pro (24B) mit 43/45 — mehr
+Parameter bringen auf diesem Prüfstand keinen Punkt. Wer das Gegenteil behauptet,
+hat nicht gemessen.
+
+`Ultra` (30–100B) · `Mega` (100–500B) · `Giga` (500B–1T) · `Tera` (1–10T) folgen
+stufenweise — jede erst, wenn sie ihren eigenen Prüfstand besteht.
+
+## Ein Befehl, ohne Download
+
+Die Stufen liegen in der Ollama-Registry. Kein GGUF herunterladen, kein Modelfile
+schreiben:
+
+```bash
+ollama run amersacirovic/openamer-max-watch     # 639 MB, laeuft auf jeder CPU
+ollama run amersacirovic/openamer-max-phone     # 2,5 GB
+ollama run amersacirovic/openamer-max-tab       # 4,4 GB
+ollama run amersacirovic/openamer-max-desktop   # 8,4 GB
+ollama run amersacirovic/openamer-max-pro       # 13,4 GB
+```
+
+Wer die rohe Datei braucht (eigene Quantisierung, Prüfsummen), nimmt das Release
+oder HuggingFace — beide enthalten die unveränderte GGUF samt SHA256.
+
+### Zwei Einstellungen, die für die ganze Familie gelten
+
+**`repeat_penalty 1.0`** — mit 1.1 drehte die Phone-Stufe eine Verneinung um
+(„Ne radi na Androidu" statt „na iPhoneu"). Das war unsere eigene Einstellung,
+kein Modell- und kein Quantisierungsfehler.
+**`temperature 0`** für Faktenfragen; das Modell ist auf knappe, korrekte Antworten
+trainiert.
 
 ## OpenAmer-Max-Watch (0.6B, Q8_0, 639 MB)
 
