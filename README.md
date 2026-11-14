@@ -11,8 +11,9 @@ gemessen (45 Fälle) und über vier Kanäle verfügbar.
 | **Tab** | 5–10B (7,62B) | 4,4 GB Q4_K_M | **42/45 (93,3 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-tab) · [Release tab-v1](https://github.com/openamer-max/models/releases/tag/tab-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-tab) |
 | **Desktop** | 10–20B (14,70B) | 8,4 GB Q4_K_M | **44/45 (97,8 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-desktop) · [Release desktop-v1](https://github.com/openamer-max/models/releases/tag/desktop-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-desktop) |
 | **Pro** | 20–30B (24,00B) | 13,4 GB Q4_K_M | **43/45 (95,6 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-pro) · [Release pro-v1](https://github.com/openamer-max/models/releases/tag/pro-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-pro) |
+| **Ultra** | 30–100B (32,00B) | 18,5 GB Q4_K_M | **41/45 (91,1 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-ultra) · [Release ultra-v1](https://github.com/openamer-max/models/releases/tag/ultra-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-ultra) |
 
-**Ehrlich dazu:** Desktop (14,7B) liegt mit 44/45 vor Pro (24B) mit 43/45 — mehr
+**Ehrlich dazu:** Ultra (32B) erreicht 41/45 und liegt damit **zwei Punkte unter Desktop** — die größte Stufe ist nicht die beste. Mit 2.890 Trainingssätzen ist die Datenmenge für 32 Milliarden Parameter zu klein. Desktop (14,7B) liegt mit 44/45 vor Pro (24B) mit 43/45 — mehr
 Parameter bringen auf diesem Prüfstand keinen Punkt. Wer das Gegenteil behauptet,
 hat nicht gemessen.
 
