@@ -6,7 +6,7 @@ gemessen (45 Fälle) und über vier Kanäle verfügbar.
 
 | Stufe | Parameter | Größe | Prüfstand v2 | Bezug |
 |---|---|---|---|---|
-| **Watch** | ≤ 1B (0,60B) | 639 MB Q8_0 | **37/45 (82,2 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-watch) · [Release watch-v1](https://github.com/openamer-max/models/releases/tag/watch-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-watch) |
+| **Watch** | ≤ 1B (0,60B) | 639 MB Q8_0 | **45/45 (100,0 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-watch) · [Release watch-v2](https://github.com/openamer-max/models/releases/tag/watch-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-watch) |
 | **Phone** | 1–5B (3,09B) | 2,5 GB Q6_K | **43/45 (95,6 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-phone) · [Release phone-v1](https://github.com/openamer-max/models/releases/tag/phone-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-phone) |
 | **Tab** | 5–10B (7,62B) | 4,4 GB Q4_K_M | **42/45 (93,3 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-tab) · [Release tab-v1](https://github.com/openamer-max/models/releases/tag/tab-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-tab) |
 | **Desktop** | 10–20B (14,70B) | 8,4 GB Q4_K_M | **44/45 (97,8 %)** | [HF](https://huggingface.co/openamer-max/openamer-max-desktop) · [Release desktop-v1](https://github.com/openamer-max/models/releases/tag/desktop-v1) · [Ollama](https://ollama.com/amersacirovic/openamer-max-desktop) |
