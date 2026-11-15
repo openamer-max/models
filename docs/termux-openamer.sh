@@ -36,6 +36,12 @@ fi
 
 echo "[3/4] Installieren (dauert einige Minuten)"
 cd "$ZIEL" || exit 1
+# Der Testlauf zeigte: ohne OPENAMER_HOME raet der Agent sein Datenverzeichnis
+# und warnt, dass Daten am falschen Ort landen koennen. Unter Termux ist
+# $HOME/.openamer der richtige Ort - deshalb ausdruecklich setzen.
+export OPENAMER_HOME="${OPENAMER_HOME:-$HOME/.openamer}"
+mkdir -p "$OPENAMER_HOME"
+echo "  Datenverzeichnis: $OPENAMER_HOME"
 pip install --upgrade pip >/dev/null 2>&1
 pip install -e . 2>&1 | tail -4
 
