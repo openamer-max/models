@@ -171,6 +171,32 @@ Trainingsdaten: 730 Fakten mit RAG-Kontext, 92 Fakten ohne Kontext, 223
 bosnische Sätze, 718 allgemeine Aufgaben (Rechnen, Code, Format, Alltag,
 Grammatik, Ablehnen, Smalltalk).
 
+## Zahlen nachrechnen
+
+Zwei Sätze, zwei Aussagen — beide gehören zusammen:
+
+| Satz | Datei | Fälle | Zweck |
+|---|---|---|---|
+| Produktfragen | `datasets/testset_pro_v2.json` | 45 | Regressionsschutz |
+| Frische Aufgaben | `datasets/allgemein_a2.json` | 20 | Fähigkeitsnachweis |
+
+```bash
+# ueber einen bestehenden Adapter (transformers)
+OPENAMER_TRAIN_DIR=. python tools/measure_adapter.py     --adapter <adapter-ordner> --tag meine-messung
+
+# ueber ein Ollama-Modell
+OPENAMER_TRAIN_DIR=. python tools/bench_fair.py --satz a2 --ollama <modellname>
+```
+
+Beide Skripte geben je Fall aus, ob er zählt, und speichern das Ergebnis als JSON
+unter `reports/`.
+
+**Wie die Zahlen zu lesen sind:** Watch Stufe 24 erreicht 45 von 45 auf den
+Produktfragen und 12 von 20 auf den frischen Aufgaben. Die untrainierte Basis
+Qwen3-0.6B erreicht dort 13 von 20 — sie ist bei allgemeinen Aufgaben also besser.
+Der 45er-Satz ist nach dem Training ein Regressionsschutz, kein Fähigkeitsnachweis.
+Der Bericht dazu liegt in `WATCH-100-PROZENT.md`.
+
 ## Lizenz
 
 Basis: Qwen2.5-3B-Instruct, **Apache 2.0** — kommerzielle Nutzung, Veränderung
