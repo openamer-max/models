@@ -1,0 +1,21 @@
+{
+  "modell": "qwen2.5:14b-instruct-q4_K_M",
+  "ergebnisse": [
+    {
+      "dauer_s": 1.0,
+      "prompt_token": 2508,
+      "prompt_tok_s": 7819.2,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 2048
+    },
+    {
+      "dauer_s": 27.2,
+      "prompt_token": 9880,
+      "prompt_tok_s": 514.7,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 8192
+    }
+  ]
+}
