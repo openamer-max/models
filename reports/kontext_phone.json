@@ -1,0 +1,13 @@
+{
+  "modell": "amersacirovic/openamer-max-phone",
+  "ergebnisse": [
+    {
+      "dauer_s": 17.6,
+      "prompt_token": 30655,
+      "prompt_tok_s": 2527.5,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 25000
+    }
+  ]
+}
