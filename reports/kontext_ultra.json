@@ -1,6 +1,42 @@
 {
   "modell": "amersacirovic/openamer-max-ultra",
+  "fassung": "2 (num_gpu 10, Teil-Offload, gemessen 16.11.2026)",
+  "hinweis": "Fassung 1 (num_gpu 0) erreichte 9.966 Token, dann HTTP 500 und rund 17 Token/s. Fassung 2 ist rund 12x schneller und traegt 30.067 Token.",
   "ergebnisse": [
+    {
+      "dauer_s": 37.5,
+      "prompt_token": 3125,
+      "prompt_tok_s": 199.6,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 2500
+    },
+    {
+      "dauer_s": 84.5,
+      "prompt_token": 12093,
+      "prompt_tok_s": 201.4,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 10000
+    },
+    {
+      "dauer_s": 174.8,
+      "prompt_token": 24063,
+      "prompt_tok_s": 167.2,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 20000
+    },
+    {
+      "dauer_s": 148.1,
+      "prompt_token": 30067,
+      "prompt_tok_s": 217.8,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 25000
+    }
+  ],
+  "historie_fassung_1": [
     {
       "dauer_s": 171.5,
       "prompt_token": 2594,
