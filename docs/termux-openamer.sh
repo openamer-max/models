@@ -1,62 +1,48 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# OpenAmer direkt auf dem Android-Geraet installieren (Termux-Userspace).
+# OpenAmer auf Android - vollstaendiger Agent im Debian-Userspace.
 #
-# Warum Termux und keine normale APK: der Agent braucht ein PTY, ein echtes
-# Dateisystem und Python 3.11+. Android-Apps bekommen ohne Linux-Userspace kein
-# PTY - deshalb laeuft der Agent hier WIRKLICH auf dem Telefon, statt nur
-# ferngesteuert zu werden.
+# Warum Debian in proot und nicht direkt in Termux (im Emulator gemessen):
+#   1. Termux laeuft auf Androids libc (bionic). manylinux-Raeder verlangen glibc
+#      - pip bricht daher bei "cryptography" ab (Bau aus Rust scheitert).
+#   2. Termux' Python ist 3.14, der Agent verlangt <3.14.
+#   Debian in proot bringt glibc und Python 3.13: dort greifen die fertigen
+#   Raeder, und der Agent startet (geprueft: v2026.11.16, Python 3.13.5).
 #
-# Geprueft: alle 27 Abhaengigkeiten liegen als aarch64-Rad vor (manylinux2014),
-# es muss also nichts auf dem Geraet kompiliert werden.
-#
-# Was laeuft: Chat, Skills, Erinnerungen, Zeitplaene, Dateien, Shell, Git.
-# Was nicht laeuft: Desktop-Oberflaeche (Electron gibt es nicht fuer Android),
-# Browser-Steuerung ueber CDP, GPU-Inferenz. Grosse Modelle sind auf der CPU
-# unbrauchbar; realistisch ist die kleinste Stufe.
+# Was laeuft danach: Chat, Skills, Erinnerungen, Zeitplaene, Dateien, Shell, Git,
+# Selbstkuratierung - derselbe Code wie unter Windows und Linux.
+# Was nicht laeuft: Desktop-Fenster, Browser-Steuerung (CDP), computer_use.
 set -u
 
-REPO="https://github.com/openamer-max/openamer"
-ZIEL="$HOME/openamer"
-
-echo "=== OpenAmer auf Android (Termux)"
+echo "=== OpenAmer auf Android (Debian-Userspace)"
 echo
 
-echo "[1/4] Pakete"
-pkg update -y >/dev/null 2>&1 || true
-pkg install -y python git >/dev/null 2>&1 || echo "  Warnung: pkg install unvollstaendig"
-python -c "import sys; print('  Python', sys.version.split()[0])"
+echo "[1/3] proot-distro und Debian"
+pkg install -y proot-distro >/dev/null 2>&1 || echo "  Warnung: proot-distro nicht installiert"
+proot-distro install debian >/dev/null 2>&1 || true
 
-echo "[2/4] Quellcode"
-if [ -d "$ZIEL" ]; then
-    git -C "$ZIEL" pull --ff-only 2>&1 | tail -1
-else
-    git clone --depth 1 "$REPO" "$ZIEL" 2>&1 | tail -1 || {
-        echo "  FEHLER: Repository nicht erreichbar"; exit 1; }
+echo "[2/3] Agent installieren (Debian, manylinux-Raeder)"
+proot-distro login debian -- bash -c '
+set -e
+export DEBIAN_FRONTEND=noninteractive
+apt-get update -qq
+apt-get install -y -qq python3-full python3-venv git >/dev/null
+cd /root
+if [ ! -d openamer ]; then
+  git clone --depth 1 https://github.com/openamer-max/openamer openamer
 fi
+cd openamer
+[ -d /root/venv ] || python3 -m venv /root/venv
+/root/venv/bin/pip install -q --upgrade pip
+/root/venv/bin/pip install -e . 2>&1 | tail -3
+'
 
-echo "[3/4] Installieren (dauert einige Minuten)"
-cd "$ZIEL" || exit 1
-# Der Testlauf zeigte: ohne OPENAMER_HOME raet der Agent sein Datenverzeichnis
-# und warnt, dass Daten am falschen Ort landen koennen. Unter Termux ist
-# $HOME/.openamer der richtige Ort - deshalb ausdruecklich setzen.
-export OPENAMER_HOME="${OPENAMER_HOME:-$HOME/.openamer}"
-mkdir -p "$OPENAMER_HOME"
-echo "  Datenverzeichnis: $OPENAMER_HOME"
-pip install --upgrade pip >/dev/null 2>&1
-pip install -e . 2>&1 | tail -4
+echo "[3/3] Probe"
+proot-distro login debian -- env OPENAMER_HOME=/root/.openamer \
+  /root/venv/bin/openamer --version 2>&1 | head -4
 
-echo "[4/4] Probe"
-if command -v openamer >/dev/null 2>&1; then
-    openamer --version 2>&1 | head -1
-    echo
-    echo "  Fertig. Start:   openamer chat"
-    echo "  Hilfe:           openamer --help"
-    echo
-    echo "  Laeuft: Chat, Skills, Erinnerungen, Zeitplaene, Dateien, Shell, Git."
-    echo "  Laeuft nicht: Desktop-Oberflaeche, Browser-Steuerung, GPU."
-    echo "  Modell: kleinste Stufe (0,6B) ist auf der CPU das einzig Sinnvolle."
-else
-    echo "  FEHLER: 'openamer' nicht gefunden."
-    echo "  Haeufigste Ursache: eine Abhaengigkeit ohne ARM64-Rad - Ausgabe oben pruefen."
-    echo "  Alternative: pip install --no-build-isolation -e ."
-fi
+echo
+echo "  Fertig. Starten mit:"
+echo "    proot-distro login debian -- /root/venv/bin/openamer chat"
+echo
+echo "  Laeuft: Chat, Skills, Erinnerungen, Zeitplaene, Dateien, Shell, Git."
+echo "  Laeuft nicht: Desktop-Fenster, Browser-Steuerung, GPU."
