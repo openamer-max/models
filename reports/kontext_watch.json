@@ -2,9 +2,33 @@
   "modell": "amersacirovic/openamer-max-watch",
   "ergebnisse": [
     {
-      "dauer_s": 222.6,
+      "dauer_s": 5.5,
+      "prompt_token": 3070,
+      "prompt_tok_s": 13928.6,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 2500
+    },
+    {
+      "dauer_s": 4.3,
+      "prompt_token": 12038,
+      "prompt_tok_s": 8698.7,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 10000
+    },
+    {
+      "dauer_s": 8.2,
+      "prompt_token": 24008,
+      "prompt_tok_s": 5016.4,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 20000
+    },
+    {
+      "dauer_s": 15.1,
       "prompt_token": 39322,
-      "prompt_tok_s": 3359.9,
+      "prompt_tok_s": 3487.6,
       "antwort": "QX-7741",
       "richtig": true,
       "ziel": 32768
