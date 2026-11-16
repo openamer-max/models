@@ -17,20 +17,23 @@ Frage: Wie lautet der geheime Code aus dem Text oben?
 Prüfstand: [`tools/kontexttest.py`](../tools/kontexttest.py)
 Rohdaten: [`reports/kontext_*.json`](../reports/)
 
-## Ergebnis
+## Ergebnis (Token im Prompt, ✗ = nicht gefunden)
 
-| Modell | Parameter | getestet bis | Anteil am Maximum | Dauer | Ergebnis |
+| Modell | Parameter | Größen | größter Treffer | Anteil am Maximum | Treffer |
 |---|---|---|---|---|---|
-| Watch | 0,60B | **39.322 Token** | 96 % von 40.960 | 222,6 s | richtig |
-| Phone | 3,1B | **30.655 Token** | 94 % von 32.768 | 17,6 s | richtig |
-| Tab | 7,6B | **30.643 Token** | 94 % von 32.768 | 28,5 s | richtig |
-| Desktop | 14,8B | **30.657 Token** | 94 % von 32.768 | 108,4 s | richtig |
-| Pro | 23,6B | **25.336 Token** | 77 % von 32.768 | 102,4 s | richtig |
-| Ultra | 32,8B | nicht messbar | — | ~32 min/Anfrage | offen |
+| Watch | 0,60B | 3,070 · 12,038 · 24,008 · 39,322 | **39,322** | 96 % | 4/4 |
+| Phone | 3,1B | 3,713 · 12,681 · 24,651 · 30,655 | **30,655** | 94 % | 4/4 |
+| Tab | 7,6B | 3,701 · 12,669 · 24,639 · 30,643 | **30,643** | 94 % | 4/4 |
+| Desktop | 14,8B | 3,715 · 12,683 · 24,653 · 30,657 | **30,657** | 94 % | 4/4 |
+| Pro | 23,6B | 2,648 · 10,200 · 20,280 · 25,336 | **25,336** | 77 % | 4/4 |
+| Ultra | 32,8B | 2,594 · 9,966 · None ✗ | **9,966** | 30 % | 2/3 |
 
-Zusätzlich geprüft bei ~2,5k, ~10k und ~20k Token: alle fünf messbaren Modelle
-richtig. Vergleichsbasis: Qwen2.5-14B (unser Feintuning-Basismodell) richtig bei
-2.508 und 9.880 Token.
+Ultra ist nicht messbar: sein Modelfile erzwingt `num_gpu 0`, 19,9 GB laufen auf
+der CPU mit rund 17 Token/s — 32.768 Token wären etwa 32 Minuten pro Anfrage.
+Die Rohdatei enthält die Fehlversuche.
+
+Vergleichsbasis (unser Feintuning-Basismodell Qwen2.5-14B): richtig bei 2.508
+und 9.880 Token (`reports/kontext_basis2.json`).
 
 ## Was das belegt
 
@@ -42,19 +45,16 @@ Der Kontext wird nicht abgeschnitten, und ein Fakt an 50 % Tiefe bleibt bis
 - **Kein Verständnisbeweis.** Ein Faktenabruf ist der einfachste Kontexttest.
   Wer ihn besteht, kann an einer Aufgabe scheitern, die den ganzen Text
   verstehen muss.
-- **Pro erreicht nur 77 %.** Neben 23,6 GB Gewichten bleibt auf 32 GB RAM kein
-  Platz für einen größeren KV-Cache; Ollama deckelt dort.
-- **Ultra ist nicht widerlegt, nur nicht gemessen.** Sein Modelfile erzwingt
-  `num_gpu 0`: 19,9 GB auf der CPU, rund 17 Token/s Prompt-Verarbeitung,
-  32.768 Token ≈ 32 Minuten. Auf dieser Hardware nicht praktikabel.
+- **Pro erreicht nur 77 %** (25.336 von 32.768): Neben 23,6 GB Gewichten bleibt
+  auf 32 GB RAM kein Platz für einen größeren KV-Cache, Ollama deckelt dort.
+- **Ultra ist nicht widerlegt, nur nicht gemessen.**
 
 ## Zwei Fehler im Prüfstand (dokumentiert, weil sie zu falschen Ergebnissen führten)
 
 1. **`num_ctx` gleich der Zielgröße** schneidet den Prompt ab. Gemessen:
    `num_ctx=2048` verarbeitete 1.026 statt 2.128 Token — die Nadel fiel weg,
    das Modell antwortete „123456". Die erste Messreihe zeigte deshalb
-   fälschlich „0 von 9 richtig". Mit Reserve: richtig. Der Fehler lag im
-   Prüfstand, nicht im Modell.
+   fälschlich „0 von 9 richtig". Der Fehler lag im Prüfstand, nicht im Modell.
 2. **Bei 32k-Ziel schnitt Ollama erneut ab** (16.386 statt ~39k), weil die
    Modelle bei 32.768 deckeln. Die Zielgröße muss unter der Deckelung liegen —
    daher 25.000 statt 32.768 bei Phone/Tab/Desktop/Pro.
@@ -74,7 +74,7 @@ Konfiguration oder Hardware.
 
 ```bash
 # ein Modell prüfen (Ollama muss laufen)
-python tools/kontexttest.py --modell watch --groessen 25000
+python tools/kontexttest.py --modell watch --groessen 2500,10000,20000,32768
 
 # eigenes Basismodell vergleichen
 python tools/kontexttest.py --modell basis --name qwen2.5:14b-instruct-q4_K_M \
