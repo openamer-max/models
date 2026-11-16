@@ -28,9 +28,10 @@ Rohdaten: [`reports/kontext_*.json`](../reports/)
 | Pro | 23,6B | 2,648 · 10,200 · 20,280 · 25,336 | **25,336** | 77 % | 4/4 |
 | Ultra | 32,8B | 2,594 · 9,966 · None ✗ | **9,966** | 30 % | 2/3 |
 
-Ultra ist nicht messbar: sein Modelfile erzwingt `num_gpu 0`, 19,9 GB laufen auf
-der CPU mit rund 17 Token/s — 32.768 Token wären etwa 32 Minuten pro Anfrage.
-Die Rohdatei enthält die Fehlversuche.
+Ultra ist messbar, aber zäh: 2.594 Token brauchten 171 s, 9.966 Token 795 s
+(rund 16–18 Token/s, weil sein Modelfile `num_gpu 0` erzwingt und 19,9 GB auf der
+CPU laufen). Bei Ziel 16.384 kam HTTP 500 — Speicher. Eine 32k-Anfrage dauerte
+hochgerechnet über 30 Minuten, deshalb nicht versucht.
 
 Vergleichsbasis (unser Feintuning-Basismodell Qwen2.5-14B): richtig bei 2.508
 und 9.880 Token (`reports/kontext_basis2.json`).
