@@ -89,7 +89,7 @@ Einmalige Einrichtung, danach ein Tipp:
 
 1. **Termux** aus [F-Droid](https://f-droid.org/packages/com.termux/) installieren
 2. In Termux: `echo "allow-external-apps=true" >> ~/.termux/termux.properties`
-3. **[Launcher-APK](https://github.com/openamer-max/models/releases/download/launcher-1.0.0/OpenAmer-Launcher.apk)** installieren (4,8 MB)
+3. **[Launcher-APK](https://github.com/openamer-max/models/releases/download/launcher-1.3.1/OpenAmer-Launcher.apk)** installieren (4,8 MB)
 4. Im Launcher „Agent installieren" → „OpenAmer starten"
 
 Ohne Launcher, direkt im Terminal:
