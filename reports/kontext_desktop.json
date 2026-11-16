@@ -2,9 +2,33 @@
   "modell": "amersacirovic/openamer-max-desktop",
   "ergebnisse": [
     {
-      "dauer_s": 108.4,
+      "dauer_s": 15.9,
+      "prompt_token": 3715,
+      "prompt_tok_s": 619.6,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 2500
+    },
+    {
+      "dauer_s": 35.1,
+      "prompt_token": 12683,
+      "prompt_tok_s": 498.5,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 10000
+    },
+    {
+      "dauer_s": 81.1,
+      "prompt_token": 24653,
+      "prompt_tok_s": 360.6,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 20000
+    },
+    {
+      "dauer_s": 76.0,
       "prompt_token": 30657,
-      "prompt_tok_s": 320.8,
+      "prompt_tok_s": 433.1,
       "antwort": "QX-7741",
       "richtig": true,
       "ziel": 25000
