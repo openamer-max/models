@@ -1,0 +1,13 @@
+{
+  "modell": "amersacirovic/openamer-max-tab",
+  "ergebnisse": [
+    {
+      "dauer_s": 28.5,
+      "prompt_token": 30643,
+      "prompt_tok_s": 1312.2,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 25000
+    }
+  ]
+}
