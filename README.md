@@ -75,6 +75,40 @@ Auch verfügbar auf
 
 ---
 
+## OpenAmer auf Android
+
+Der vollständige Agent läuft auf dem Telefon — nicht ferngesteuert, nicht als
+Hülle um eine Webseite. Gemessen im Android-Emulator:
+
+```
+OpenAmer Agent v2026.11.16 · Install method: git
+Python: 3.13.5 · OpenAI SDK: 2.24.0
+```
+
+Einmalige Einrichtung, danach ein Tipp:
+
+1. **Termux** aus [F-Droid](https://f-droid.org/packages/com.termux/) installieren
+2. In Termux: `echo "allow-external-apps=true" >> ~/.termux/termux.properties`
+3. **[Launcher-APK](https://github.com/openamer-max/models/releases/download/launcher-1.0.0/OpenAmer-Launcher.apk)** installieren (4,8 MB)
+4. Im Launcher „Agent installieren" → „OpenAmer starten"
+
+Ohne Launcher, direkt im Terminal:
+
+```bash
+curl -sL https://raw.githubusercontent.com/openamer-max/models/main/docs/termux-openamer.sh | bash
+```
+
+**Warum ein Debian-Userspace nötig ist** (beides gemessen, nicht vermutet):
+Termux läuft auf Androids libc — manylinux-Räder verlangen glibc, deshalb ließ
+sich `cryptography` dort nicht bauen. Und Termux' Python ist 3.14, der Agent
+verlangt `<3.14`. Debian in `proot` bringt glibc und Python 3.13.
+
+**Grenzen:** Browser-Steuerung (`browser_*`, `computer_use`) und das
+Electron-Fenster fehlen; Modelle laufen nur auf der CPU. Alles andere — Dateien,
+Shell, Git, Skills, Erinnerungen, Zeitpläne, Selbstkuratierung — läuft.
+
+Details: <https://openamer-max.github.io/android.html>
+
 ## Unterstützen
 
 Wenn dir diese Modelle helfen: ein ⭐ hier hilft mehr als du denkst — daran erkennen
