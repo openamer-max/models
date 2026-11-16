@@ -2,9 +2,33 @@
   "modell": "amersacirovic/openamer-max-pro",
   "ergebnisse": [
     {
-      "dauer_s": 102.4,
+      "dauer_s": 23.6,
+      "prompt_token": 2648,
+      "prompt_tok_s": 339.3,
+      "antwort": "QX-7741.",
+      "richtig": true,
+      "ziel": 2500
+    },
+    {
+      "dauer_s": 47.6,
+      "prompt_token": 10200,
+      "prompt_tok_s": 342.0,
+      "antwort": "QX-7741.",
+      "richtig": true,
+      "ziel": 10000
+    },
+    {
+      "dauer_s": 84.1,
+      "prompt_token": 20280,
+      "prompt_tok_s": 317.9,
+      "antwort": "QX-7741.",
+      "richtig": true,
+      "ziel": 20000
+    },
+    {
+      "dauer_s": 57.8,
       "prompt_token": 25336,
-      "prompt_tok_s": 307.9,
+      "prompt_tok_s": 480.3,
       "antwort": "QX-7741.",
       "richtig": true,
       "ziel": 25000
