@@ -121,6 +121,15 @@ ihren dokumentierten Kontext. Rohdaten und Prüfstand liegen im Repo:
 Wichtig: 39k liegt **unter** der Mindestanforderung von OpenAmer Agent (64k).
 Der Agent kann auf dieser Familie nicht laufen — unabhängig von der Hardware.
 
+
+### Adapter je Stufe
+
+LoRA-Adapter liegen auf Hugging Face für **Watch, Phone, Desktop, Pro, Ultra**.
+Für **Tab** existiert kein Adapter mehr — nur das ausgelieferte GGUF. Er wurde bei
+einer lokalen Aufräumaktion entfernt und ist nicht wiederherstellbar; die
+Nachvollziehbarkeit von Tab beschränkt sich damit auf das GGUF und die
+Prüfstandsmessung (42/45).
+
 ## Unterstützen
 
 Wenn dir diese Modelle helfen: ein ⭐ hier hilft mehr als du denkst — daran erkennen
