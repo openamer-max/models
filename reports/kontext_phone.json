@@ -2,9 +2,33 @@
   "modell": "amersacirovic/openamer-max-phone",
   "ergebnisse": [
     {
-      "dauer_s": 17.6,
+      "dauer_s": 5.6,
+      "prompt_token": 3713,
+      "prompt_tok_s": 3674.0,
+      "antwort": "QX-7741.",
+      "richtig": true,
+      "ziel": 2500
+    },
+    {
+      "dauer_s": 7.5,
+      "prompt_token": 12681,
+      "prompt_tok_s": 3207.7,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 10000
+    },
+    {
+      "dauer_s": 13.2,
+      "prompt_token": 24651,
+      "prompt_tok_s": 2626.3,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 20000
+    },
+    {
+      "dauer_s": 8.7,
       "prompt_token": 30655,
-      "prompt_tok_s": 2527.5,
+      "prompt_tok_s": 3648.3,
       "antwort": "QX-7741",
       "richtig": true,
       "ziel": 25000
