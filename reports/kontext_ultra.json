@@ -1,0 +1,26 @@
+{
+  "modell": "amersacirovic/openamer-max-ultra",
+  "ergebnisse": [
+    {
+      "dauer_s": 171.5,
+      "prompt_token": 2594,
+      "prompt_tok_s": 17.8,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 2048
+    },
+    {
+      "dauer_s": 794.9,
+      "prompt_token": 9966,
+      "prompt_tok_s": 16.4,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 8192
+    },
+    {
+      "ziel": 16384,
+      "fehler": "HTTP Error 500: Internal Server Error",
+      "richtig": false
+    }
+  ]
+}
