@@ -26,12 +26,13 @@ Rohdaten: [`reports/kontext_*.json`](../reports/)
 | Tab | 7,6B | 3,701 · 12,669 · 24,639 · 30,643 | **30,643** | 94 % | 4/4 |
 | Desktop | 14,8B | 3,715 · 12,683 · 24,653 · 30,657 | **30,657** | 94 % | 4/4 |
 | Pro | 23,6B | 2,648 · 10,200 · 20,280 · 25,336 | **25,336** | 77 % | 4/4 |
-| Ultra | 32,8B | 2,594 · 9,966 · None ✗ | **9,966** | 30 % | 2/3 |
+| Ultra | 32,8B | 3,125 · 12,093 · 24,063 · 30,067 | **30,067** | 92 % | 4/4 |
 
-Ultra ist messbar, aber zäh: 2.594 Token brauchten 171 s, 9.966 Token 795 s
-(rund 16–18 Token/s, weil sein Modelfile `num_gpu 0` erzwingt und 19,9 GB auf der
-CPU laufen). Bei Ziel 16.384 kam HTTP 500 — Speicher. Eine 32k-Anfrage dauerte
-hochgerechnet über 30 Minuten, deshalb nicht versucht.
+Ultra wurde nach dem ersten Durchlauf neu gebaut: Fassung 1 erzwang `num_gpu 0`
+(alles CPU), schaffte 9.966 Token bei rund 17 Token/s und brach bei 16k mit HTTP
+500 ab. Fassung 2 legt 10 von 64 Schichten in den VRAM und ist rund **12×
+schneller** (200 Token/s) — damit 4 von 4 Treffern bis **30.067 Token**. Die alten
+Werte stehen als `historie_fassung_1` in der Rohdatei.
 
 Vergleichsbasis (unser Feintuning-Basismodell Qwen2.5-14B): richtig bei 2.508
 und 9.880 Token (`reports/kontext_basis2.json`).
