@@ -1,0 +1,13 @@
+{
+  "modell": "amersacirovic/openamer-max-desktop",
+  "ergebnisse": [
+    {
+      "dauer_s": 108.4,
+      "prompt_token": 30657,
+      "prompt_tok_s": 320.8,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 25000
+    }
+  ]
+}
