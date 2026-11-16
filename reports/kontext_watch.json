@@ -1,0 +1,13 @@
+{
+  "modell": "amersacirovic/openamer-max-watch",
+  "ergebnisse": [
+    {
+      "dauer_s": 222.6,
+      "prompt_token": 39322,
+      "prompt_tok_s": 3359.9,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 32768
+    }
+  ]
+}
