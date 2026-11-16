@@ -2,9 +2,33 @@
   "modell": "amersacirovic/openamer-max-tab",
   "ergebnisse": [
     {
-      "dauer_s": 28.5,
+      "dauer_s": 7.5,
+      "prompt_token": 3701,
+      "prompt_tok_s": 2000.8,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 2500
+    },
+    {
+      "dauer_s": 11.2,
+      "prompt_token": 12669,
+      "prompt_tok_s": 1702.8,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 10000
+    },
+    {
+      "dauer_s": 22.4,
+      "prompt_token": 24639,
+      "prompt_tok_s": 1386.3,
+      "antwort": "QX-7741",
+      "richtig": true,
+      "ziel": 20000
+    },
+    {
+      "dauer_s": 16.4,
       "prompt_token": 30643,
-      "prompt_tok_s": 1312.2,
+      "prompt_tok_s": 1925.5,
       "antwort": "QX-7741",
       "richtig": true,
       "ziel": 25000
