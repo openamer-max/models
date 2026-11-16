@@ -109,6 +109,18 @@ Shell, Git, Skills, Erinnerungen, Zeitpläne, Selbstkuratierung — läuft.
 
 Details: <https://openamer-max.github.io/android.html>
 
+
+## Wie viel Kontext tragen die Modelle?
+
+Gemessen, nicht geschätzt: bis zu **39.322 Token** (Watch) — die Modelle tragen
+ihren dokumentierten Kontext. Rohdaten und Prüfstand liegen im Repo:
+
+- [Kontextmessung (Bericht)](docs/KONTEXT-MESSUNG.md)
+- [Prüfstand](tools/kontexttest.py) · [Rohdaten](reports/)
+
+Wichtig: 39k liegt **unter** der Mindestanforderung von OpenAmer Agent (64k).
+Der Agent kann auf dieser Familie nicht laufen — unabhängig von der Hardware.
+
 ## Unterstützen
 
 Wenn dir diese Modelle helfen: ein ⭐ hier hilft mehr als du denkst — daran erkennen
