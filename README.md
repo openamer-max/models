@@ -263,3 +263,19 @@ Der Copyright-Hinweis der Basis bleibt bestehen (Apache 2.0, Abschnitt 4).
 - Projekt: https://openamer-max.github.io/
 - App im Browser: https://openamer-max.github.io/app/
 - Entwickler: Amer Sacirovic, Schweiz
+
+---
+
+## OpenAmer unterstuetzen
+
+OpenAmer ist kostenlos und bleibt kostenlos - sechs Modelle, 185 Sprachen,
+kein Konto, keine Cloud, keine Werbung im Programm. Wer die Entwicklung
+unterstuetzen will:
+
+<a href="https://www.paypal.com/qrcodes/p2pqrc/BVZD4HRJ9G6YG"><img src="https://openamer-max.github.io/assets/spenden-qr.png" alt="PayPal-Spenden-QR-Code" width="160"></a>
+
+**[Ueber PayPal unterstuetzen](https://www.paypal.com/qrcodes/p2pqrc/BVZD4HRJ9G6YG)** - jeder Betrag fliesst in Server,
+GPU-Zeit und Speicher. Kein Gehalt, keine Boni.
+
+Firmen-Sponsoring: openamer-max@proton.me (Logo und Link auf der Website und
+in allen Repository-READMEs).
